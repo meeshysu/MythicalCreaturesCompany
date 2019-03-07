@@ -10,8 +10,14 @@ namespace MythicalCreaturesInCorp
             var blueFairy = new Employee("Ramilda the Blue Fairy", "Healer and Fairy Dust Thrower", DateTime.Now);
             var henryMills = new Employee("Prince Henry Mills of Storybrooke", "Magical Author", DateTime.Now);
             var evilQueen = new Employee("Evil Queen of Queen Evilness", "Evil Queen", DateTime.Now);
+
+            newCompany.AddEmployees(blueFairy);
+            newCompany.AddEmployees(henryMills);
+            newCompany.AddEmployees(evilQueen);
+            newCompany.ListEmployees();
+
+            Console.ReadLine();
         }
-
-
     }
 }
+
