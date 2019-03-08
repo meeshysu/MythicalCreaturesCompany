@@ -10,7 +10,7 @@ namespace MythicalCreaturesInCorp
         public DateTime CreatedOn { get; set; }
         public string Summary { get; set; }
 
-        public List<Employee> Employees = new List<Employee>(); 
+        public List<Employee> companyEmployees = new List<Employee>(); 
 
         public Company(string companyname, DateTime createdOn, string summary)
         {
@@ -21,16 +21,19 @@ namespace MythicalCreaturesInCorp
 
         public void AddEmployees(Employee newEmployee)
         {
-            Employees.Add(newEmployee);
+            companyEmployees.Add(newEmployee);
+        }
+
+        public void RemoveEmployees(Employee employee)
+        {
+            companyEmployees.Remove(employee);
         }
 
         public void ListEmployees()
         {
-            foreach (Employee emp in Employees)
+            foreach (var employee in companyEmployees)
             {
-                Console.WriteLine(emp.Name);
-                Console.WriteLine(emp.JobTitle);
-                Console.WriteLine(emp.StartDate);
+                Console.WriteLine($"{employee.Name} is the {employee.JobTitle} and started the company on {employee.StartDate}.");
 
             }
         }
